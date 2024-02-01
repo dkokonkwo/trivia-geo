@@ -1,0 +1,56 @@
+/* Custom Fonts */
+@font-face {
+  font-family: "Telegraphem";
+  src: url("./assests/fonts/Telegraphem.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Anastasia-Script";
+  src: url("./assests/fonts/Anastasia-Script.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "CantoraOne-Regular";
+  src: url("./assests/fonts/CantoraOne-Regular.ttf");
+  font-weight: 700;
+}
+
+@import "~loaders.css/src/animations/pacman.scss";
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: center;
+  justify-self: center;
+  margin-top: 17%;
+
+  h3 {
+    color: #ffffff;
+    font-family: "CantoraOne-Regular", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin: 20px;
+  }
+}

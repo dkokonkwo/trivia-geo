@@ -1,0 +1,674 @@
+/* Custom Fonts */
+@font-face {
+  font-family: "Telegraphem";
+  src: url("./assests/fonts/Telegraphem.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Anastasia-Script";
+  src: url("./assests/fonts/Anastasia-Script.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "CantoraOne-Regular";
+  src: url("./assests/fonts/CantoraOne-Regular.ttf");
+  font-weight: 700;
+}
+
+/* Default CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-image: url("./assests/img/WorldMap.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #131313 !important;
+  font-family: "CantoraOne-Regular", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+/************ Navbar CSS ************/
+nav.navbar {
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: 0.32s ease-in-out;
+  margin: 0;
+  backdrop-filter: blur(2px);
+}
+
+nav.navbar.scrolled {
+  padding: 0px 0;
+  background-color: transparent;
+  height: 16%;
+  opacity: 0;
+  transition: 0.7s ease-in-out;
+  box-shadow: 0px 3px 4px 4px rgba(39, 24, 24, 0.7);
+}
+
+nav.navbar.scrolled:hover {
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav.navbar a.navbar-brand {
+  width: 20%;
+  height: 100%;
+  border: 0;
+  display: flex;
+}
+
+nav.navbar a.navbar-brand img {
+  width: 113px;
+  height: 110px;
+  border-radius: 50%;
+  border: 7px solid rgb(230, 230, 230);
+  align-self: flex-start;
+  justify-self: flex-start;
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 700;
+  color: #131313 !important;
+  letter-spacing: 0.8px;
+  font-size: 30px;
+  opacity: 0.75;
+  font-family: "Telegraphem", sans-serif;
+  width: 150px;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  opacity: 1;
+  color: #7c3902 !important;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover {
+  opacity: 1;
+  color: white !important;
+}
+
+.me-auto {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+
+span.navbar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-left: 14px;
+}
+
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid #131313;
+  font-size: 20px;
+}
+
+.social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+
+.social-icon a .icons {
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.social-icon a:hover .icons {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
+    hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+.navbar-text button {
+  font-family: "Telegraphem", sans-serif;
+  font-weight: 700;
+  color: #131313;
+  border: 1px solid #131313;
+  font-size: 20px;
+  margin-left: 18px;
+  width: 40%;
+  height: 100%;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.connect h5 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.navbar-text button span {
+  z-index: 1;
+}
+.navbar-text button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar-text button:hover {
+  color: #121212;
+}
+.navbar-text button:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+nav.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  border-bottom: 2px solid #121212;
+  transition: all 300ms linear;
+  top: -2px;
+}
+
+nav.navbar .navbar-toggler-icon:focus {
+  border-bottom: 2px solid #121212;
+}
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-toggler-icon:before {
+  width: 24px;
+  position: absolute;
+  height: 2px;
+  background-color: #121212;
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 2;
+  transition: all 300ms linear;
+}
+nav.navbar .navbar-toggler-icon:after {
+  top: 8px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(45deg);
+  background-color: #fff;
+  height: 2px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: translateY(8px) rotate(-45deg);
+  background-color: #fff;
+  height: 2px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  border-color: transparent;
+}
+
+/* BANNER CSS */
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100;
+}
+
+/* HOME CSS */
+.skill {
+  margin: 0;
+  position: relative;
+  margin-top: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.skill-box {
+  text-align: center;
+  background: url("./assests/img/parchee.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 10px;
+  position: relative;
+  width: 68%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill h1 {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Telegraphem", sans-serif;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+  margin-top: 20px;
+}
+
+.skill p {
+  color: #121212;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 2em;
+  width: 53%;
+  height: 100%;
+  font-family: "Anastasia-Script", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100% !important;
+}
+
+.skill-slider {
+  width: 95%;
+  height: 75%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0px;
+}
+
+.skill-slider .item img {
+  animation: updown 3s linear infinite;
+  width: 40%;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}
+
+.play {
+  width: 12%;
+  height: 15%;
+  color: #fdfef9;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid #fdfef9;
+  border-radius: 10px;
+  font-weight: 600;
+  font-family: "Telegraphem", sans-serif;
+  background: #26b5c5;
+  transition: 0.4s ease-in-out;
+}
+
+.play:hover {
+  background: #fdfef9;
+  color: #26b5c5;
+  transform: scale(1.05);
+}
+
+/* -----About CSS------ */
+.py-4 {
+  position: relative;
+  background: url("./assests/img/ani-parch.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1000px !important;
+  height: 656px;
+  margin-top: 5.5%;
+  justify-self: center;
+  align-self: center;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.row-1 {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+  padding-top: 30px;
+}
+
+.py-4 h2 {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Telegraphem", sans-serif;
+  color: #7c3902;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  color: #121212;
+  background: #dddddd;
+  font-family: "Telegraphem", sans-serif;
+}
+
+.nav-pills .nav-item .nav-link {
+  border-radius: 0;
+}
+
+.py-4 .nav-pills .nav-link::before {
+  content: "";
+  z-index: -1;
+  background: #282828;
+  transition: 0.3s ease-in-out;
+}
+
+.py-4 .nav.nav-pills .nav-link.active::before {
+  width: 100% !important;
+}
+
+.nav-pills .nav-item:not(:nth-last-child(1)) .nav-link {
+  border-right: 1px solid white;
+}
+
+.nav-pills .nav-item .nav-link:active,
+.nav-pills .nav-item .nav-link:hover {
+  background: #282828;
+  color: #dddddd;
+}
+
+.tab-content {
+  background: rgba(219, 194, 194, 0.6);
+  box-shadow: 7px 3px 6px 7px rgba(39, 24, 24, 0.7);
+  height: 75%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "CantoraOne-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 2em;
+}
+
+.about-img {
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* CONTACT CSS */
+.contact img {
+  width: 300px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.contact h2 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  color: #fff;
+  margin: 0 0 6px 0;
+  padding: 6px 10px;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  transition: 0.3s ease-in-out;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  color: #121212;
+  border: 0px;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: #7c3902;
+}
+
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+  color: #121212;
+  opacity: 0.8;
+}
+
+.contact form button {
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  padding: 0px 30px;
+  font-size: 18px;
+  margin: 0;
+  border: 0;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.contact form button span {
+  z-index: 1;
+  position: relative;
+}
+
+.contact form button:hover {
+  color: #fff;
+  border-radius: 10px;
+}
+
+.contact form button::before {
+  content: "";
+  background: #121212;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.contact form button:hover::before {
+  width: 100%;
+}
+
+.align-items-center {
+  justify-content: space-evenly;
+}
+
+/* PLAY CSS */
+.game {
+  margin-top: 9%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.options {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url("./assests/img/ani-parch.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.options h3 {
+  font-family: "Anastasia-Script", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin: 0;
+  margin-top: 5%;
+}
+
+.options-child {
+  height: 68%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.difficulty {
+  width: 20% !important;
+  font-family: "Telegraphem", sans-serif;
+  font-weight: 700;
+  height: 90%;
+  border-radius: 25px;
+  border: 0;
+  transition: 0.4s ease-in-out;
+  color: #ffffff;
+}
+
+.difficulty:hover {
+  transform: scale(1.05);
+}
+
+.difficulty h1 {
+  margin-top: 70px;
+  margin-bottom: 150px;
+  transform: rotate(-90deg);
+  text-align: left;
+  font-size: 40px;
+}
+
+.heart {
+  position: relative;
+  font-size: 25px;
+  margin: 2px;
+  margin-bottom: 0;
+}
+
+#palm {
+  background-image: url(./assests/img/island.png);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #a8e7d7;
+}
+
+#mountn {
+  background-image: url(./assests/img/mountain.png);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #ec6a3a;
+}
+
+#river {
+  background-image: url(./assests/img/river-bg.png);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #f8cb35;
+}
+
+#hotair {
+  background-image: url(./assests/img/hot-air.png);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #4f5856;
+}
