@@ -108,6 +108,7 @@ function NavBar() {
           <Route path="/about" element={<About />} />
           <Route path="/play" element={<Play />} />
           <Route path="/" element={<Home />} />
+          <Route path="/trivia-geo" element={<Home />} />
         </Routes>
       </div>
     </Router>

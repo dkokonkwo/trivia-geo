@@ -63,8 +63,6 @@ export const Index = () => {
     fetchData();
   }, [difficulty]);
 
-  console.log(questions);
-
   // Function to shuffle options
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
