@@ -267,7 +267,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
-  color: #CBD600 !important;
+  color: #cbd600 !important;
 }
 
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover {
@@ -600,8 +600,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .skill-box {
     width: 95%;
     border-radius: 20px;
-    padding: 13px 5px;
+    padding: 15px 15px;
     padding-top: 2px;
+    justify-content: center;
   }
 
   .skill h1 {
@@ -630,6 +631,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background: rgba(255, 255, 255, 0.6);
     width: 100%;
     height: 100% !important;
+    border-radius: 10px;
   }
 
   .skill-slider {
@@ -677,20 +679,31 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-/* -----About CSS------ */
+/* -----ABOUT CSS------ */
+.big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7.5%;
+  height: 85vh;
+}
+
 .py-4 {
   position: relative;
-  background: url("./assests/img/ani-parch.png");
+  /* background: url("./assests/img/ani-parch.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  width: 1000px !important;
-  height: 656px;
-  margin-top: 5.5%;
+  background-repeat: no-repeat; */
+  background: #d7bb94;
+  width: 70%;
+  height: 95%;
+  border-radius: 30px;
+  box-shadow: 3px 3px 4px 4px rgba(145, 141, 141, 0.7);
   justify-self: center;
   align-self: center;
-  padding: 60px 0;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
+  padding-bottom: 2px;
 }
 
 .row-1 {
@@ -699,7 +712,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 90%;
   height: 100%;
   padding: 10px;
-  padding-top: 30px;
+  padding-top: 5px;
 }
 
 .py-4 h2 {
@@ -743,16 +756,41 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .tab-content {
-  background: rgba(219, 194, 194, 0.6);
-  box-shadow: 7px 3px 6px 7px rgba(39, 24, 24, 0.7);
-  height: 75%;
+  background: rgba(255, 255, 255, 0.6);
+  height: 76%;
   border-radius: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   font-family: "CantoraOne-Regular", sans-serif;
   font-size: 20px;
   line-height: 2em;
+}
+
+.tab-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+  font-size: 25px;
+  line-height: 1.9;
+}
+
+.about-me {
+  height: 95%;
+}
+
+.about-me p {
+  margin-top: 20px;
+}
+
+.about-me button {
+  border: 0px;
+  width: 70px;
+  border-radius: 10px;
+  background: #26b5c5;
+  color: #fdfef9;
 }
 
 .about-img {
@@ -769,7 +807,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .contact h2 {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -791,7 +829,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .contact form input:focus,
 .contact form textarea:focus {
-  color: #121212;
+  color: #383838;
   border: 0px;
 }
 
@@ -853,10 +891,207 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   justify-content: space-evenly;
 }
 
+@media (min-width: 601px) and (max-width: 1023px) {
+  .big {
+    margin-top: 22%;
+  }
+
+  .py-4 {
+    width: 90%;
+  }
+
+  .row-1 h2 {
+    margin-bottom: 6%;
+  }
+
+  .tab-content p {
+    font-size: 25px;
+    line-height: 1.9;
+  }
+
+  .about-me {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .about-me h3 {
+    height: 10%;
+    margin: 20px;
+  }
+
+  .about-me p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 45%;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .contact {
+    height: 100% !important;
+  }
+
+  .contact img {
+    width: 220px;
+  }
+
+  .contact h2 {
+    font-size: 35px;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    border-radius: 7px;
+    margin: 0 0 12px 0;
+    padding: 3px 7px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 600px) {
+  .big {
+    margin-top: 32%;
+    height: 86vh;
+  }
+
+  .py-4 {
+    width: 90%;
+    height: 96%;
+    border-radius: 20px;
+    padding: 8px 0;
+    padding-bottom: 0px;
+  }
+
+  .py-4 h2 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .nav-pills .nav-link {
+    border-radius: 0;
+    color: #121212;
+    background: #dddddd;
+    font-family: "Telegraphem", sans-serif;
+    font-size: 15px;
+  }
+
+  .tab-content {
+    height: 77%;
+    border-radius: 15px;
+    font-size: 20px;
+    line-height: 2em;
+  }
+
+  .tab-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100% !important;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .about-me p {
+    margin-top: 16px;
+    font-size: 20px;
+    line-height: 1.8;
+  }
+
+  .contact img {
+    display: none;
+  }
+
+  .contact h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    border-radius: 10px;
+    margin: 0 0 5px 0;
+    padding: 6px 10px;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+  }
+}
+
+@media (max-width: 370px) {
+  .big {
+    margin-top: 32%;
+    height: 86vh;
+  }
+
+  .row-1 h2 {
+    margin-bottom: 3%;
+  }
+
+  .py-4 {
+    width: 92%;
+    height: 96%;
+    border-radius: 15px;
+    padding: 2px 0px;
+    padding-bottom: 0px;
+  }
+
+  .row-1 {
+    height: 99%;
+    padding: 0px;
+  }
+
+  .py-4 h2 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .nav-pills .nav-link {
+    font-size: 15px;
+  }
+
+  .tab-content {
+    height: 74%;
+    width: 97%;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.6em;
+  }
+
+  .tab-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100% !important;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .about-me p {
+    margin-top: 12px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    border-radius: 10px;
+    margin: 0 0 5px 0;
+    padding: 6px 10px;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+  }
+}
+
 /* PLAY CSS */
 .game {
   margin-top: 9%;
-
   display: flex;
   align-items: center;
   justify-content: center;

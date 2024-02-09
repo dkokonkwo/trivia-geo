@@ -75,56 +75,51 @@ export const Contact = () => {
           <h3>...loading...</h3>
         </Container>
       ) : (
-        <Container fluid="sm" className="py-4">
-          <Row className="row-1">
-            <h2>About Trivia Geo</h2>
-            <Tabs
-              justify
-              variant="pills"
-              defaultActiveKey="tab-1"
-              className="mb-2 p-2"
-            >
-              <Tab eventKey="tab-1" title="Trivia Geo">
-                <p>
-                  At Trivia Geo, we believe that learning about the world can be
-                  both fun and informative. Our trivia game is designed to
-                  challenge your geographical knowledge while keeping you
-                  entertained. Whether you're a geography enthusiast or just
-                  looking for a way to test your global awareness, Trivia Geo is
-                  the perfect platform for you. We take pride in using the
-                  TriviaDB API to power our extensive collection of geography
-                  questions. This ensures that our users experience high-quality
-                  and up-to-date trivia content, making each round a captivating
-                  adventure.
-                </p>
-                <p>
-                  We take pride in using the TriviaDB API to power our extensive
-                  collection of geography questions. This ensures that our users
-                  experience high-quality and up-to-date trivia content, making
-                  each round a captivating adventure.
-                </p>
-              </Tab>
-              <Tab eventKey="tab-2" title="Creator" className="about-me">
-                <h3>Meet the Creator</h3>
-                <img
-                  src={creatorImg}
-                  alt="about-img"
-                  className="about-img"
-                ></img>
-                <p>
-                  Trivia Geo was created by David Okonkwo, a passionate
-                  developer dedicated to bringing educational and entertaining
-                  experiences to users. Learn more about the creator and their
-                  other projects by visiting{" "}
-                  <a href="#" target="_blank">
-                    David's Website
-                  </a>
-                  .
-                </p>
-              </Tab>
-              <Tab eventKey="tab-3" title="Contact">
-                <div className="contact" id="connect">
-                  <Container>
+        <Container fluid className="big">
+          <div className="py-4">
+            <Row className="row-1">
+              <h2>About Trivia Geo</h2>
+              <Tabs
+                justify
+                variant="pills"
+                defaultActiveKey="tab-1"
+                className="mb-2 p-2"
+              >
+                <Tab eventKey="tab-1" title="Game">
+                  <p className="tab-p">
+                    At Trivia Geo, we aim to blend learning and enjoyment by
+                    offering a trivia game that challenges your geographical
+                    knowledge while keeping you entertained. Whether you're a
+                    geography enthusiast or simply seeking a fun way to test
+                    your global awareness, Trivia Geo is the ideal platform for
+                    you. Powered by the TriviaDB API, our game features an
+                    extensive collection of geography questions, ensuring
+                    high-quality and up-to-date trivia content for an engaging
+                    experience with each round.
+                  </p>
+                </Tab>
+                <Tab eventKey="tab-2" title="Creator" className="about-me">
+                  <h3>Meet the Creator</h3>
+                  <img
+                    src={creatorImg}
+                    alt="about-img"
+                    className="about-img"
+                  ></img>
+                  <p>
+                    Trivia Geo was created by David Okonkwo, a passionate
+                    developer dedicated to bringing educational and entertaining
+                    experiences to users. Learn more about the creator and their
+                    other projects by visiting his website{" "}
+                    <a
+                      href="https://dkokonkwo.github.io/portfolio/"
+                      target="_blank"
+                    >
+                      <button>Here</button>
+                    </a>
+                  </p>
+                </Tab>
+                <Tab eventKey="tab-3" title="Contact">
+                  <Container className="contact" id="connect">
                     <Row className="align-items-center">
                       <Col md={5}>
                         <img src={contactImg} alt="contact us" />
@@ -204,10 +199,10 @@ export const Contact = () => {
                       </Col>
                     </Row>
                   </Container>
-                </div>
-              </Tab>
-            </Tabs>
-          </Row>
+                </Tab>
+              </Tabs>
+            </Row>
+          </div>
         </Container>
       )}
     </section>
