@@ -9,11 +9,10 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { LinkContainer } from "react-router-bootstrap";
 import { ProgressBar } from "react-loader-spinner";
 
-
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = [" WELCOME TO TRIVIA GEO..", "TEST YOUR KNOWLEDGE"];
+  const toRotate = [" WELCOME TO TRIVIA GEO", "TEST YOUR KNOWLEDGE"];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 5000;
@@ -98,44 +97,42 @@ export const Banner = () => {
           <h3>...loading...</h3>
         </Container>
       ) : (
-          <Container fluid className="skill" id="skills">
-            <div className="skill-box">
-              <h1>
-                {`Hi! `}
-                <span className="wrap">{text}</span>
-              </h1>
-              <Carousel
-                responsive={responsive}
-                infinite={true}
-                className="skill-slider"
-              >
-                <div className="item">
-                  <p>
-                    volutpat blandit aliquam etiam erat velit scelerisque in
-                    dictum non consectetur a erat nam at lectus urna duis
-                    convallis convallis tellus id interdum velit laoreet id
-                    donec ultrices tincidunt arcu !
-                  </p>
-                  <img src={postcard1} alt="postcard" />
-                </div>
-                <div className="item">
-                  <p>
-                    volutpat blandit aliquam etiam erat velit scelerisque in
-                    dictum non consectetur a erat nam at lectus urna duis
-                    convallis convallis tellus id interdum velit laoreet id
-                    donec ultrices tincidunt arcu !
-                  </p>
-                  <img src={postcard2} alt="postcard" />
-                </div>
-              </Carousel>
-              <LinkContainer to="/play">
-                <button className="play">
-                  <span>PLAY</span>
-                  <FontAwesomeIcon icon={faPlay} className="icons" />
-                </button>
-              </LinkContainer>
-            </div>
-          </Container>
+        <Container fluid className="skill" id="skills">
+          <div className="skill-box">
+            <h1>
+              {`Hi! `}
+              <span className="wrap">{text}</span>
+            </h1>
+            <Carousel
+              responsive={responsive}
+              infinite={true}
+              className="skill-slider"
+            >
+              <div className="item">
+                <p>
+                  Welcome to TriviaGeo! Test your global knowledge with our fun
+                  geography game. Choose your difficulty level, answer
+                  questions, and aim for the high score!
+                </p>
+                <img src={postcard1} alt="postcard" />
+              </div>
+              <div className="item">
+                <p>
+                  Select your difficulty level and start playing! Lose a life
+                  for each wrong answer until you reach the max score or run out
+                  of lives. How far can you go?
+                </p>
+                <img src={postcard2} alt="postcard" />
+              </div>
+            </Carousel>
+            <LinkContainer to="/play" className="playButton">
+              <button className="play">
+                <span>PLAY</span>
+                <FontAwesomeIcon icon={faPlay} className="icons" />
+              </button>
+            </LinkContainer>
+          </div>
+        </Container>
       )}
     </>
   );

@@ -73,7 +73,7 @@ nav.navbar.scrolled {
   height: 16%;
   opacity: 0;
   transition: 0.7s ease-in-out;
-  box-shadow: 0px 3px 4px 4px rgba(39, 24, 24, 0.7);
+  box-shadow: 0px 3px 4px 4px rgba(82, 79, 79, 0.7);
 }
 
 nav.navbar.scrolled:hover {
@@ -88,19 +88,171 @@ nav.navbar.scrolled:hover {
 }
 
 nav.navbar a.navbar-brand {
-  width: 20%;
+  width: auto;
   height: 100%;
   border: 0;
   display: flex;
 }
 
 nav.navbar a.navbar-brand img {
-  width: 113px;
-  height: 110px;
+  max-width: 113px;
+  max-height: 110px;
   border-radius: 50%;
   border: 7px solid rgb(230, 230, 230);
   align-self: flex-start;
   justify-self: flex-start;
+}
+
+@media (min-width: 601px) and (max-width: 1023px) {
+  nav.navbar.scrolled {
+    height: 15%;
+    opacity: 1;
+    box-shadow: 0px 3px 4px 4px rgba(99, 96, 96, 0.4);
+  }
+  nav.navbar a.navbar-brand img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .me-auto,
+  .navbar-text {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    height: 40%;
+  }
+
+  .custom-navbar-collapse {
+    /* backdrop-filter: blur(20px); */
+    background: rgba(255, 255, 255, 0.965);
+    position: fixed; /* Position the collapsed navbar */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Ensure the navbar appears above other content */
+  }
+
+  .nav-link.navbar-link {
+    font-size: 45px !important;
+    margin: 10px;
+  }
+
+  .navbar-text {
+    justify-content: space-between;
+  }
+
+  .social-icon a {
+    width: 55px !important;
+    height: 55px !important;
+    margin: 20px;
+  }
+
+  .icons {
+    font-size: 40px;
+  }
+
+  .vvd {
+    height: 20% !important;
+    margin-top: 20px;
+  }
+
+  .navbar-text button {
+    font-weight: 700;
+    font-size: 60px !important;
+    width: 70%;
+    height: 80%;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  nav.navbar.scrolled {
+    height: 15%;
+    opacity: 1;
+    box-shadow: 0px 3px 4px 4px rgba(100, 98, 98, 0.4);
+  }
+  nav.navbar a.navbar-brand img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .me-auto,
+  .navbar-text {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    height: 40%;
+  }
+
+  .nav-link.navbar-link {
+    font-size: 30px !important;
+    margin: 10px;
+  }
+
+  .navbar-text {
+    justify-content: space-between;
+  }
+
+  .social-icon a {
+    width: 55px !important;
+    height: 55px !important;
+    margin: 20px;
+  }
+
+  .icons {
+    font-size: 40px;
+  }
+
+  .vvd {
+    height: 20% !important;
+    margin-top: 20px;
+  }
+
+  .custom-navbar-collapse {
+    /* backdrop-filter: blur(20px); */
+    background: rgba(255, 255, 255, 0.965);
+    position: fixed; /* Position the collapsed navbar */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Ensure the navbar appears above other content */
+  }
+
+  .navbar-text button {
+    font-weight: 700;
+    font-size: 60px !important;
+    width: 70%;
+    height: 80%;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
@@ -115,7 +267,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
-  color: #7c3902 !important;
+  color: #CBD600 !important;
 }
 
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover {
@@ -244,7 +396,7 @@ nav.navbar .navbar-toggler-icon {
   background-image: none;
   position: relative;
   border-bottom: 2px solid #121212;
-  transition: all 300ms linear;
+  transition: all 400ms linear;
   top: -2px;
 }
 
@@ -260,7 +412,7 @@ nav.navbar .navbar-toggler-icon:before {
   top: 0;
   left: 0;
   content: "";
-  z-index: 2;
+  z-index: 1011;
   transition: all 300ms linear;
 }
 nav.navbar .navbar-toggler-icon:after {
@@ -291,25 +443,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill {
   margin: 0;
   position: relative;
-  margin-top: 7%;
+  margin-top: 8.5%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
+  justify-content: space-evenly;
+  height: 80vh;
 }
 
 .skill-box {
   text-align: center;
-  background: url("./assests/img/parchee.png");
+  /* background: url("./assests/img/parchee.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  padding: 40px 10px;
+  background-repeat: no-repeat; */
+  background: rgba(245, 192, 152, 0.945);
+  border-radius: 30px;
+  box-shadow: 3px 3px 3px 3px rgba(102, 99, 99, 0.5);
+  padding: 20px 10px;
+  padding-top: 2px;
   position: relative;
-  width: 68%;
+  width: 65%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -319,16 +475,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-family: "Telegraphem", sans-serif;
   letter-spacing: 0.8px;
   line-height: 1;
-  margin-bottom: 8px;
-  display: block;
-  margin-top: 20px;
+  width: 95%;
+  height: 20%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill p {
   color: #121212;
-  font-size: 18px;
-  letter-spacing: 1px;
-  line-height: 2em;
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 3em;
   width: 53%;
   height: 100%;
   font-family: "Anastasia-Script", sans-serif;
@@ -346,7 +507,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .skill-slider {
   width: 95%;
-  height: 75%;
+  height: 55% !important;
   margin: 0 auto;
   position: relative;
   padding: 0px;
@@ -355,6 +516,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill-slider .item img {
   animation: updown 3s linear infinite;
   width: 40%;
+  border-radius: 20px;
 }
 
 @keyframes updown {
@@ -372,15 +534,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
-.play {
+.playButton {
   width: 12%;
-  height: 15%;
+  height: 55px;
   color: #fdfef9;
   font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border: 2px solid #fdfef9;
+  border: 0px;
   border-radius: 10px;
   font-weight: 600;
   font-family: "Telegraphem", sans-serif;
@@ -388,10 +550,131 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.4s ease-in-out;
 }
 
-.play:hover {
+.playButton:hover {
   background: #fdfef9;
   color: #26b5c5;
   transform: scale(1.05);
+}
+
+@media (min-width: 601px) and (max-width: 1026px) {
+  .skill {
+    margin-top: 30%;
+    height: 700px;
+  }
+
+  .skill-box {
+    border-radius: 40px;
+    padding: 40px 10px;
+    width: 95%;
+  }
+
+  .skill-slider {
+    width: 97%;
+  }
+
+  .playButton {
+    margin-top: 30px;
+    width: 20%;
+    height: 60px;
+  }
+
+  .skill p {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 2.5em;
+    width: 57%;
+    height: 100%;
+    font-family: "CantoraOne-Regular", sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .skill {
+    margin-top: 35%;
+    height: 78vh;
+  }
+
+  .skill-box {
+    width: 95%;
+    border-radius: 20px;
+    padding: 13px 5px;
+    padding-top: 2px;
+  }
+
+  .skill h1 {
+    font-size: 120%;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    width: 99%;
+    height: 12%;
+    border-radius: 10px;
+  }
+
+  .playButton .icons {
+    font-size: 35px;
+  }
+
+  .playButton {
+    width: 40%;
+    font-size: 24px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height: 100% !important;
+  }
+
+  .skill-slider {
+    height: 65% !important;
+    width: 99% !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .skill p {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 28px;
+    width: 95%;
+    height: 40%;
+    font-family: "CantoraOne-Regular", sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skill-slider .item img {
+    animation: leftright 3s linear infinite;
+    width: 70%;
+    height: 40%;
+    border-radius: 15px;
+  }
+
+  @keyframes leftright {
+    0% {
+      transform: translateX(-20px);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(-20px);
+    }
+  }
+  .txt-rotate > .wrap {
+    border-right: 0.08em solid #666;
+  }
 }
 
 /* -----About CSS------ */

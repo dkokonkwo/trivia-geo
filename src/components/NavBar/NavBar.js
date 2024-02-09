@@ -1,7 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../../assests/img/Designer.png";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,16 +21,28 @@ function NavBar() {
     setActiveLink(value);
   };
 
+  const [expanded, setExpanded] = useState(false);
+
+  const handleNavigation = () => {
+    setExpanded(false);
+  };
+
   return (
     <Router>
-      <Navbar expand="lg" className="scrolled">
+      <Navbar expand="lg" className="scrolled" expanded={expanded}>
         <Container className="container">
           <Navbar.Brand as={Link} to={"/"}>
             <img src={logo} alt="logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={() => setExpanded(!expanded)}
+          />
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="custom-navbar-collapse"
+          >
+            <Nav className="me-auto" onClick={handleNavigation}>
               <Nav.Link
                 as={Link}
                 to={"/"}
@@ -65,7 +76,10 @@ function NavBar() {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/david-okonkwo"
+                  target="_blank"
+                >
                   <FontAwesomeIcon
                     icon={faLinkedin}
                     color="#131313"
@@ -87,8 +101,8 @@ function NavBar() {
                   />
                 </a>
               </div>
-              <LinkContainer to="/About">
-                <button className="vvd" onClick={() => console.log("connect")}>
+              <LinkContainer to="/About" className="vvd">
+                <button onClick={() => console.log("connect")}>
                   <span className="connect">
                     <h5>CONNECT</h5>
                     <FontAwesomeIcon
