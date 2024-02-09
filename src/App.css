@@ -105,7 +105,7 @@ nav.navbar a.navbar-brand img {
 
 @media (min-width: 601px) and (max-width: 1023px) {
   nav.navbar.scrolled {
-    height: 15%;
+    height: 12%;
     opacity: 1;
     box-shadow: 0px 3px 4px 4px rgba(99, 96, 96, 0.4);
   }
@@ -181,13 +181,13 @@ nav.navbar a.navbar-brand img {
 
 @media (max-width: 600px) {
   nav.navbar.scrolled {
-    height: 15%;
+    height: 13%;
     opacity: 1;
     box-shadow: 0px 3px 4px 4px rgba(100, 98, 98, 0.4);
   }
   nav.navbar a.navbar-brand img {
-    width: 80px;
-    height: 80px;
+    width: 78px;
+    height: 78px;
   }
 
   .me-auto,
@@ -1026,8 +1026,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @media (max-width: 370px) {
   .big {
-    margin-top: 32%;
-    height: 86vh;
+    margin-top: 26%;
+    height: 85vh;
   }
 
   .row-1 h2 {
@@ -1057,7 +1057,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 
   .tab-content {
-    height: 74%;
+    height: 78%;
     width: 97%;
     border-radius: 12px;
     font-size: 16px;
@@ -1073,9 +1073,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     line-height: 1.6;
   }
 
+  .about-img {
+    width: 120px;
+  }
+
   .about-me p {
     margin-top: 12px;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5;
   }
 
@@ -1083,7 +1087,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .contact form textarea {
     border-radius: 10px;
     margin: 0 0 5px 0;
-    padding: 6px 10px;
+    padding: 5px 6px;
     font-size: 12px;
     letter-spacing: 0.6px;
   }
