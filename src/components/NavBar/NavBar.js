@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Play from "../Play/Play";
 import Home from "../Home/Home";
 import About from "../About/About";
-import { Component } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 
 function NavBar() {

@@ -1,7 +1,7 @@
-import { Container, Row, Col, Modal, ModalBody } from "react-bootstrap";
+import { Container, Row, Col, Modal } from "react-bootstrap";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, useEffect, isValidElement } from "react";
+import { useState, useEffect } from "react";
 import { ProgressBar } from "react-loader-spinner";
 import "./Questions.css";
 
@@ -36,11 +36,6 @@ export const Index = () => {
       setLoading(false);
     }, 6000);
     setNumHearts(value);
-  };
-
-  // RANDOMIZE OPTIONS
-  const getRandomNumber = (max) => {
-    return Math.floor(Math.random() * (max + 1));
   };
 
   // FETCH DATA FUNCTION
